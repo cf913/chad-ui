@@ -5,7 +5,7 @@ import {useLocalTheme} from './ThemeProvider/UIThemeProvider'
 type ContentProps = {} & ViewProps
 
 export function Content(props: ContentProps) {
-  const {children} = props
+  const {children, style = {}} = props
   const {layout} = useLocalTheme()
 
   const styles: {[key: string]: ViewStyle} = {
@@ -13,5 +13,5 @@ export function Content(props: ContentProps) {
       paddingHorizontal: layout.padding,
     },
   }
-  return <ThemedView style={styles.container}>{children}</ThemedView>
+  return <ThemedView style={[styles.container, style]}>{children}</ThemedView>
 }

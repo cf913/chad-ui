@@ -15,7 +15,7 @@ export default function HomeScreen() {
               push: true,
             },
             {key: 'Typography', title: 'Typography', href: '/typography'},
-            {key: 'Layout', title: 'Layout'},
+            {key: 'Layout', title: 'Layout', href: '/layout'},
             {key: 'List', title: 'List'},
           ]}
         />

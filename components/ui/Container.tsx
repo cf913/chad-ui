@@ -7,15 +7,18 @@ type ContainerProps = {
 } & ViewProps
 
 export function Container(props: ContainerProps) {
-  const {withInsets = true, children} = props
+  const {withInsets = true, children, style = {}} = props
   const insets = useSafeAreaInsets()
   return (
     <ThemedView
-      style={{
-        paddingTop: withInsets ? insets.top : 0,
-        // paddingBottom: withInsets ? insets.bottom : 0,
-        flexGrow: 1,
-      }}
+      style={[
+        {
+          paddingTop: withInsets ? insets.top : 0,
+          // paddingBottom: withInsets ? insets.bottom : 0,
+          flexGrow: 1,
+        },
+        style,
+      ]}
     >
       {children}
     </ThemedView>
