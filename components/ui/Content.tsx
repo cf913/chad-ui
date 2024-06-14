@@ -1,14 +1,16 @@
 import {ViewProps, ViewStyle} from 'react-native'
 import {ThemedView} from './ThemedView'
+import {useLocalTheme} from './ThemeProvider/UIThemeProvider'
 
 type ContentProps = {} & ViewProps
 
-export default function Content(props: ContentProps) {
+export function Content(props: ContentProps) {
   const {children} = props
+  const {layout} = useLocalTheme()
 
   const styles: {[key: string]: ViewStyle} = {
     container: {
-      paddingHorizontal: 16,
+      paddingHorizontal: layout.padding,
     },
   }
   return <ThemedView style={styles.container}>{children}</ThemedView>

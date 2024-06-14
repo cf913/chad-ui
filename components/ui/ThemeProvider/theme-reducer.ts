@@ -1,16 +1,3 @@
-export type ThemeState = {
-  layout: {
-    content: {
-      padding: number
-    }
-    button: {
-      height: number
-      borderRadius: number
-    }
-  }
-  colors: {}
-}
-
 export enum ThemeActionType {
   UPDATE = 'UPDATE',
   RESET = 'RESET',
@@ -21,11 +8,20 @@ export type ThemeAction = {
   payload: any
 }
 
+export type ThemeState = {
+  layout: {
+    padding: number
+    button: {
+      height: number
+      borderRadius: number
+    }
+  }
+  colors: {}
+}
+
 export const INIT_THEME: ThemeState = {
   layout: {
-    content: {
-      padding: 16,
-    },
+    padding: 16,
     button: {
       height: 48,
       borderRadius: 12,

@@ -17,7 +17,7 @@ export const LAYOUT = {
   },
 }
 
-export default function Button(props: ButtonProps) {
+export function Button(props: ButtonProps) {
   const {onPress, text} = props
   const {layout} = useLocalTheme()
 
