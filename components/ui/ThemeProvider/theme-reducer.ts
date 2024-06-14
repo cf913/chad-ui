@@ -29,7 +29,7 @@ export const INIT_THEME: ThemeState = {
   layout: {
     padding: 16,
     borderRadius: 16,
-    item_height: 48,
+    item_height: 54,
     button: {
       height: 48,
       borderRadius: 12,

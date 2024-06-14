@@ -1,16 +1,20 @@
-import {Container, Content, List, Padder, ThemedText} from '@/components/ui'
+import {Container, Content, Header, List, Padder} from '@/components/ui'
 
 export default function HomeScreen() {
   return (
     <Container>
       <Content>
-        <ThemedText style={{fontSize: 32, lineHeight: 34, fontWeight: 'bold'}}>
-          Components
-        </ThemedText>
+        <Header title="Components" back={false}></Header>
         <Padder />
         <List
           data={[
-            {key: 'Button', title: 'Button'},
+            {
+              key: 'Button',
+              title: 'Button',
+              href: '/button',
+              push: true,
+            },
+            {key: 'Typography', title: 'Typography', href: '/typography'},
             {key: 'Layout', title: 'Layout'},
             {key: 'List', title: 'List'},
           ]}

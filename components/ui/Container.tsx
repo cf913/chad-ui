@@ -2,16 +2,18 @@ import {ViewProps} from 'react-native'
 import {ThemedView} from './ThemedView'
 import {useSafeAreaInsets} from 'react-native-safe-area-context'
 
-type ContainerProps = {} & ViewProps
+type ContainerProps = {
+  withInsets?: boolean
+} & ViewProps
 
 export function Container(props: ContainerProps) {
-  const {children} = props
+  const {withInsets = true, children} = props
   const insets = useSafeAreaInsets()
   return (
     <ThemedView
       style={{
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
+        paddingTop: withInsets ? insets.top : 0,
+        // paddingBottom: withInsets ? insets.bottom : 0,
         flexGrow: 1,
       }}
     >
