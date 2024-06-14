@@ -1,4 +1,4 @@
-import {Container, Content, Padder, Row, ThemedText} from '@/components/ui'
+import {Container, Content, List, Padder, ThemedText} from '@/components/ui'
 
 export default function HomeScreen() {
   return (
@@ -8,11 +8,13 @@ export default function HomeScreen() {
           Components
         </ThemedText>
         <Padder />
-        <Row>
-          <ThemedText>Left</ThemedText>
-          <ThemedText>Mid</ThemedText>
-          <ThemedText>Right</ThemedText>
-        </Row>
+        <List
+          data={[
+            {key: 'Button', title: 'Button'},
+            {key: 'Layout', title: 'Layout'},
+            {key: 'List', title: 'List'},
+          ]}
+        />
       </Content>
     </Container>
   )

@@ -1,3 +1,5 @@
+import {ViewStyle} from 'react-native'
+
 export enum ThemeActionType {
   UPDATE = 'UPDATE',
   RESET = 'RESET',
@@ -11,6 +13,8 @@ export type ThemeAction = {
 export type ThemeState = {
   layout: {
     padding: number
+    borderRadius: number
+    item_height: number
     button: {
       height: number
       borderRadius: number
@@ -19,9 +23,13 @@ export type ThemeState = {
   colors: {}
 }
 
+export type CustomStyles = {[key: string]: ViewStyle}
+
 export const INIT_THEME: ThemeState = {
   layout: {
     padding: 16,
+    borderRadius: 16,
+    item_height: 48,
     button: {
       height: 48,
       borderRadius: 12,
