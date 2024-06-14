@@ -19,7 +19,6 @@ export default function Layout() {
     <Container>
       <Content>
         <Header title="Header with Back btn" />
-        <Header title="Just the Title" back={false} />
       </Content>
       <Container style={border}>
         <ThemedText>Container with safe area insets top and bot</ThemedText>
