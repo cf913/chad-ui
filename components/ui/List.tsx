@@ -1,20 +1,21 @@
 import {ThemedView} from './ThemedView'
 import {useLocalTheme} from './ThemeProvider/UIThemeProvider'
 import {CustomStyles} from './ThemeProvider/theme-reducer'
-import {ViewProps} from 'react-native'
+import {FlatListProps, ViewProps} from 'react-native'
 import {useMemo} from 'react'
 import {useThemeColor} from '@/hooks/useThemeColor'
 import {FlatList} from 'react-native-gesture-handler'
-import {Divider} from './Divider'
 import {ListItem, ListItemData} from './ListItem'
+import {Separator} from './Separator'
 
 type ListProps = {
   data: ListItemData[]
-  scrollEnable?: boolean
+  keyExtractor: FlatListProps<ListItemData>['keyExtractor']
+  scrollEnabled?: boolean
 } & ViewProps
 
 export function List(props: ListProps) {
-  const {data, scrollEnable = false} = props
+  const {data, scrollEnabled = false, keyExtractor} = props
   const {layout} = useLocalTheme()
   const color = useThemeColor({}, 'text')
 
@@ -37,9 +38,10 @@ export function List(props: ListProps) {
     <ThemedView style={styles.shadow_container}>
       <ThemedView style={[styles.container]}>
         <FlatList
-          scrollEnabled={scrollEnable}
-          ItemSeparatorComponent={Divider}
+          scrollEnabled={scrollEnabled}
+          ItemSeparatorComponent={Separator}
           data={data}
+          keyExtractor={keyExtractor}
           renderItem={({item}) => <ListItem item={item} />}
         />
       </ThemedView>

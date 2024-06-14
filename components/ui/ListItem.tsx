@@ -11,7 +11,7 @@ import {useThemeColor} from '@/hooks/useThemeColor'
 import {TouchableOpacity} from 'react-native-gesture-handler'
 
 export type ListItemData = {
-  key: string
+  key?: string
   title: string
   subtitle?: string
   href?: string

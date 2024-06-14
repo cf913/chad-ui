@@ -7,15 +7,10 @@ import {router} from 'expo-router'
 import {Feather} from '@expo/vector-icons'
 import {useThemeColor} from '@/hooks/useThemeColor'
 import {
-  FadeIn,
   FadeInLeft,
   FadeInRight,
   FadeOut,
   FadeOutRight,
-  RollInRight,
-  RollOutRight,
-  SlideInRight,
-  SlideOutRight,
 } from 'react-native-reanimated'
 
 type HeaderProps = {
@@ -32,7 +27,7 @@ export function Header(props: HeaderProps) {
       <Row>
         {back && (
           <AnimatedView
-            entering={FadeInLeft.duration(500)}
+            entering={FadeInLeft.duration(400)}
             exiting={FadeOut.duration(100)}
           >
             <Pressable onPress={router.back} hitSlop={30} style={{zIndex: 2}}>

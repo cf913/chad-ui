@@ -16,8 +16,9 @@ export default function HomeScreen() {
             },
             {key: 'Typography', title: 'Typography', href: '/typography'},
             {key: 'Layout', title: 'Layout', href: '/layout'},
-            {key: 'List', title: 'List'},
+            {key: 'List', title: 'List', href: '/list'},
           ]}
+          keyExtractor={item => item.key!}
         />
       </Content>
     </Container>
