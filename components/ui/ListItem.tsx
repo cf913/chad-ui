@@ -31,7 +31,7 @@ export function ListItem(props: ListItemProps) {
     () => ({
       container: {
         paddingHorizontal: layout.padding,
-        height: layout.item_height,
+        height: layout.itemHeight,
         justifyContent: 'center',
       },
     }),

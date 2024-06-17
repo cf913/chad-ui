@@ -17,6 +17,7 @@ export default function HomeScreen() {
             {key: 'Typography', title: 'Typography', href: '/typography'},
             {key: 'Layout', title: 'Layout', href: '/layout'},
             {key: 'List', title: 'List', href: '/list'},
+            {key: 'Input', title: 'Input', href: '/input'},
           ]}
           keyExtractor={item => item.key!}
         />

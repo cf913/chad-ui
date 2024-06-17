@@ -14,7 +14,7 @@ export type ThemeState = {
   layout: {
     padding: number
     borderRadius: number
-    item_height: number
+    itemHeight: number
     button: {
       height: number
       borderRadius: number
@@ -29,7 +29,7 @@ export const INIT_THEME: ThemeState = {
   layout: {
     padding: 16,
     borderRadius: 16,
-    item_height: 54,
+    itemHeight: 54,
     button: {
       height: 48,
       borderRadius: 12,
