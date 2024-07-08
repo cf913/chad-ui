@@ -1,15 +1,16 @@
-import {Pressable, PressableProps, TextStyle, ViewStyle} from 'react-native'
-import {ThemedText} from './ThemedText'
-import {useThemeColor} from '@/hooks/useThemeColor'
-import {useLocalTheme} from './ThemeProvider/UIThemeProvider'
-import {Loader} from './Loader'
-import {useMemo} from 'react'
+import { Pressable, PressableProps, TextStyle, ViewStyle } from 'react-native'
+import { ThemedText } from './ThemedText'
+import { useThemeColor } from '@/hooks/useThemeColor'
+import { useLocalTheme } from './ThemeProvider/UIThemeProvider'
+import { Loader } from './Loader'
+import { useMemo } from 'react'
 
 type ButtonProps = {
   text: string
   loading?: boolean
   disabled?: boolean
   outline?: boolean
+  compact?: boolean
 } & PressableProps
 
 export function Button(props: ButtonProps) {
@@ -19,8 +20,9 @@ export function Button(props: ButtonProps) {
     loading = false,
     disabled = false,
     outline = false,
+    compact = false,
   } = props
-  const {layout} = useLocalTheme()
+  const { layout } = useLocalTheme()
 
   const colorTheme = useThemeColor({}, 'tint')
   const backgroundColorTheme = useThemeColor({}, 'background')
@@ -29,13 +31,14 @@ export function Button(props: ButtonProps) {
   const color = borderColor
   const backgroundColor = outline ? backgroundColorTheme : colorTheme
 
-  const styles: {[key: string]: ViewStyle | TextStyle} = useMemo(
+  const styles: { [key: string]: ViewStyle | TextStyle } = useMemo(
     () => ({
       container: {
         borderWidth: 1,
         borderColor: borderColor,
         backgroundColor: backgroundColor,
-        width: '100%',
+        width: compact ? 'auto' : '100%',
+        minWidth: 70,
         height: layout.button.height,
         justifyContent: 'center',
         alignItems: 'center',

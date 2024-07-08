@@ -1,4 +1,4 @@
-import {Container, Content, Header, List, Padder} from '@/components/ui'
+import { Container, Content, Header, List, Padder } from '@/components/ui'
 
 export default function HomeScreen() {
   return (
@@ -14,11 +14,16 @@ export default function HomeScreen() {
               href: '/button',
               push: true,
             },
-            {key: 'Typography', title: 'Typography', href: '/typography'},
-            {key: 'Layout', title: 'Layout', href: '/layout'},
-            {key: 'List', title: 'List', href: '/list'},
-            {key: 'Input', title: 'Input', href: '/input'},
-            {key: 'WithHeader', title: 'WithHeader', href: '/with-header'},
+            { key: 'Typography', title: 'Typography', href: '/typography' },
+            { key: 'Layout', title: 'Layout', href: '/layout' },
+            { key: 'List', title: 'List', href: '/list' },
+            { key: 'Input', title: 'Input', href: '/input' },
+            { key: 'WithHeader', title: 'WithHeader', href: '/with-header' },
+            {
+              key: 'CircularHeader',
+              title: 'Circular header',
+              href: '/circular-header',
+            },
           ]}
           keyExtractor={item => item.key!}
         />
