@@ -1,13 +1,11 @@
+import SkiaCircle from '@/components/SkiaCircle'
 import {
-  Header,
   Content,
-  ThemedText,
-  Button,
-  Spacer,
-  Row,
+  Header,
   Padder,
-  ThemedView,
   ScrollContainer,
+  ThemedText,
+  ThemedView,
 } from '@/components/ui'
 import React, { useRef, useState } from 'react'
 import { Pressable, ScrollView, useWindowDimensions } from 'react-native'
@@ -88,6 +86,7 @@ export default function CircularHeaderScreen() {
       <Content>
         <ThemedText>Circular Header</ThemedText>
       </Content>
+      <SkiaCircle />
       <Padder />
       <Content>
         <ThemedText>Horizontal Header</ThemedText>

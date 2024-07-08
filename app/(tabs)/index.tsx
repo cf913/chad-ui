@@ -19,6 +19,7 @@ export default function HomeScreen() {
             { key: 'List', title: 'List', href: '/list' },
             { key: 'Input', title: 'Input', href: '/input' },
             { key: 'WithHeader', title: 'WithHeader', href: '/with-header' },
+            { key: 'Reanimated', title: 'Reanimated', href: '/reanimated' },
             {
               key: 'CircularHeader',
               title: 'Circular header',
