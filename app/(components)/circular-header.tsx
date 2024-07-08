@@ -7,6 +7,7 @@ import {
   Row,
   Padder,
   ThemedView,
+  ScrollContainer,
 } from '@/components/ui'
 import React, { useRef, useState } from 'react'
 import { Pressable, ScrollView, useWindowDimensions } from 'react-native'
@@ -23,6 +24,7 @@ const toCarouselItems = (components: any[], index: number) => {
   // add components[index] to start and end of array to create carousel
   // return array
 
+  // TODO: generalize this to work with any number of components
   const items = [...components]
   console.log('index', index)
   if (index === 0) {
@@ -43,12 +45,11 @@ const DEFAULT_INDEX = 1
 
 export default function CircularHeaderScreen() {
   const scrollViewRef = useRef<ScrollView>(null)
-  const [index, setIndex] = useState(DEFAULT_INDEX)
   const [currentItem, setCurrentItem] = useState(DEFAULT_INDEX)
   const insets = useSafeAreaInsets()
   const { width } = useWindowDimensions()
   const [headerItems, setHeaderItems] = useState(() =>
-    toCarouselItems(components_arr, index),
+    toCarouselItems(components_arr, DEFAULT_INDEX),
   )
 
   const ITEM_WIDTH = width / 3
@@ -75,22 +76,28 @@ export default function CircularHeaderScreen() {
   }
 
   return (
-    <>
-      <Content withInsets style={{}}>
+    <ScrollContainer withInsets={false}>
+      <Content withInsets>
         <Header title="Circular Header" />
-
         <ThemedText>
           From:
           https://www.reddit.com/r/reactnative/comments/1dxkxzb/circular_carousal_slider/
         </ThemedText>
-        <Padder />
-        <ThemedText>The Header</ThemedText>
+      </Content>
+      <Padder />
+      <Content>
+        <ThemedText>Circular Header</ThemedText>
+      </Content>
+      <Padder />
+      <Content>
+        <ThemedText>Horizontal Header</ThemedText>
       </Content>
       <ScrollView
         ref={scrollViewRef}
         horizontal
+        scrollEnabled={false}
         pagingEnabled
-        contentOffset={{ x: index * ITEM_WIDTH, y: 0 }}
+        contentOffset={{ x: ITEM_WIDTH, y: 0 }}
         snapToInterval={width / 3}
         snapToAlignment={'center'}
         showsHorizontalScrollIndicator={false}
@@ -135,6 +142,6 @@ export default function CircularHeaderScreen() {
         )}
         <Padder />
       </Content>
-    </>
+    </ScrollContainer>
   )
 }
