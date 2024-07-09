@@ -36,7 +36,7 @@ export default function ReanimatedScreen() {
   return (
     <ScrollContainer withInsets={false}>
       <Content withInsets>
-        <Header title="Reanimated" />
+        <Header title="First Animation" />
         <Divider />
         <ThemedText>Tuto</ThemedText>
         <Col style={{ alignItems: 'center' }}>
