@@ -28,6 +28,16 @@ export default function ReanimatedLandingScreen() {
               title: 'withSpring',
               href: '/reanimated/with-spring',
             },
+            {
+              key: 'modifiers',
+              title: 'Modifiers',
+              href: '/reanimated/modifiers',
+            },
+            {
+              key: 'template',
+              title: 'Template',
+              href: '/reanimated/template',
+            },
           ]}
           keyExtractor={item => item.key!}
         />
