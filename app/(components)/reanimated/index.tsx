@@ -34,6 +34,11 @@ export default function ReanimatedLandingScreen() {
               href: '/reanimated/modifiers',
             },
             {
+              key: 'handling-gestures',
+              title: 'Handling Gestures',
+              href: '/reanimated/handling-gestures',
+            },
+            {
               key: 'template',
               title: 'Template',
               href: '/reanimated/template',
